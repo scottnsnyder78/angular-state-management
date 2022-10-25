@@ -6,6 +6,7 @@ import { createActionGroup, emptyProps, props } from '@ngrx/store';
 export const CounterComponentEvents = createActionGroup({
   source: 'Counter CounterComponent Events',
   events: {
+    entered: emptyProps(),
     incremented: emptyProps(),
     decremented: emptyProps(),
     reset: emptyProps(),
