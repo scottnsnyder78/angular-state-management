@@ -3,16 +3,30 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MastheadComponent } from './components/masthead/masthead.component';
+import { DumbCounterComponent } from './components/dumb-counter/dumb-counter.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { UiModule } from './features/ui/ui.module';
+import { AuthModule } from './features/auth/auth.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    // components
+    AppComponent,
+    MastheadComponent,
+    DumbCounterComponent,
+    DashboardComponent,
+    NavigationComponent,
   ],
   imports: [
+    // use these other modules
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    UiModule,
+    AuthModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent], // root level module has this.
 })
-export class AppModule { }
+export class AppModule {}
