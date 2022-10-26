@@ -5,6 +5,13 @@ import { AuthEvents, AuthDocuments } from '../actions/auth.actions';
 
 @Injectable()
 export class AuthEffects {
+  logOff$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(AuthEvents.logoff),
+      // do your magic!
+      map(() => AuthDocuments.user({ payload: {} })),
+    );
+  });
   // that turns on AuthEvent.requested -> (MAGIC!) -> AuthDocuments.user
   logIn$ = createEffect(() => {
     return this.actions$.pipe(
